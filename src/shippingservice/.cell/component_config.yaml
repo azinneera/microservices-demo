@@ -12,3 +12,8 @@ spec:
     type: REST
     visibility: Organization
     context: /
+  outbound:
+    serviceReferences:
+    - name: choreo:///asmaj/lpar/auvzlk/40c92b81-2ddd-4933-9422-a920b7e27736/v1.0/currencyservice/public
+      dependentConfig: config-1
+      connectionType: service    
