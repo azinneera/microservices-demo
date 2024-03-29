@@ -1,0 +1,24 @@
+name: Architecture Conformance Check
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  ballerina-central-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Install ArchCheck
+      working-directory: .
+      run: |
+        wget https://github.com/azinneera/archcheck/actions/runs/8483969083/artifacts/1370225298
+        unzip ArchCheck.zip
+        unzip ../archcheck-1.0-SNAPSHOT.zip -d archcheck-1.0-SNAPSHOT
+        
+    - name: Run Conformance Check
+      working-directory: archcheck-1.0-SNAPSHOT
+      run: |
+        ./archcheck --intended ../docs/architecture.drawio --modified ../src/
+        
