@@ -1,0 +1,14 @@
+apiVersion: core.choreo.dev/v1alpha1
+kind: ComponentConfig
+metadata:
+  name: redis
+  projectName: gcp-demo
+  annotations:
+    componentType: datastore
+spec:
+  inbound:
+  - name: redis
+    port: 9095
+    type: REST
+    visibility: Organization
+    context: /
