@@ -17,3 +17,6 @@ spec:
     - name: choreo:///asmaj/lpar/auvzlk/40c92b81-2ddd-4933-9422-a920b7e27736/v1.0/productcatalogservice/public
       dependentConfig: config-1
       connectionType: service
+    - name: choreo:///asmaj/lpar/auvzlk/40c92b81-2ddd-4933-9422-a920b7e27736/v1.0/cartservice/public
+      dependentConfig: config-2
+      connectionType: service    
