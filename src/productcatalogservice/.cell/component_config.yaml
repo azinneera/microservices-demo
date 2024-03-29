@@ -1,0 +1,14 @@
+apiVersion: v1alpha1
+kind: ComponentConfig
+metadata:
+  name: productcatalogservice
+  projectName: gcp-demo
+  annotations:
+    componentType: service
+spec:
+  inbound:
+  - name: productcatalogservice
+    port: 9095
+    type: REST
+    visibility: Organization
+    context: /

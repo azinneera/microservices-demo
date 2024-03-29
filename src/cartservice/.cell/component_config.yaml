@@ -1,0 +1,19 @@
+apiVersion: v1alpha1
+kind: ComponentConfig
+metadata:
+  name: cartservice
+  projectName: gcp-demo
+  annotations:
+    componentType: service
+spec:
+  inbound:
+  - name: cartservice
+    port: 9090
+    type: REST
+    visibility: Public
+    context: /
+  outbound:
+    serviceReferences:
+    - name: redis
+      dependentConfig: config-1
+      connectionType: datastore

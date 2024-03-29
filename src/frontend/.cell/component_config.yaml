@@ -1,0 +1,37 @@
+apiVersion: v1alpha1
+kind: ComponentConfig
+metadata:
+  name: frontend
+  projectName: gcp-demo
+  annotations:
+    componentType: service
+spec:
+  inbound:
+  - name: frontend
+    port: 9090
+    type: REST
+    visibility: Public
+    context: /
+  outbound:
+    serviceReferences:
+    - name: choreo:///asmaj/lpar/auvzlk/40c92b81-2ddd-4933-9422-a920b7e27736/v1.0/adservice/public
+      dependentConfig: config-1
+      connectionType: service
+    - name: choreo:///asmaj/lpar/auvzlk/40c92b81-2ddd-4933-9422-a920b7e27736/v1.0/recommendationservice/public
+      dependentConfig: config-1
+      connectionType: service            
+    - name: choreo:///asmaj/lpar/auvzlk/40c92b81-2ddd-4933-9422-a920b7e27736/v1.0/productcatalogservice/public
+      dependentConfig: config-1
+      connectionType: service
+    - name: choreo:///asmaj/lpar/auvzlk/40c92b81-2ddd-4933-9422-a920b7e27736/v1.0/cartservice/public
+      dependentConfig: config-1
+      connectionType: service
+    - name: choreo:///asmaj/lpar/auvzlk/40c92b81-2ddd-4933-9422-a920b7e27736/v1.0/shippingservice/public
+      dependentConfig: config-1
+      connectionType: service
+    - name: choreo:///asmaj/lpar/auvzlk/40c92b81-2ddd-4933-9422-a920b7e27736/v1.0/currencyservice/public
+      dependentConfig: config-1
+      connectionType: service
+    - name: choreo:///asmaj/lpar/auvzlk/40c92b81-2ddd-4933-9422-a920b7e27736/v1.0/checkoutservice/public
+      dependentConfig: config-1
+      connectionType: service          

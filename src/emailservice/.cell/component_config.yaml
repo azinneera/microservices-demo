@@ -1,0 +1,14 @@
+apiVersion: v1alpha1
+kind: ComponentConfig
+metadata:
+  name: emailservice
+  projectName: gcp-demo
+  annotations:
+    componentType: service
+spec:
+  inbound:
+  - name: emailservice
+    port: 9095
+    type: REST
+    visibility: Organization
+    context: /
